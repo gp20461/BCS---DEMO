@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="script.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .menu {
+      float: left;
+      background-color: #e5e5e5;
+      /* text-align: center; */
+
+    }
+
+    .menu a {
+      font-size: 15px;
+      padding: 4px;
+      margin-top: 7px;
+      display: block;
+      width: 100%;
+      color: black;
+      overflow: auto;
+      margin-left: 2px;
+      overflow-x: hidden;
+      text-decoration: none;
+    }
+
+    #main {
+      float: left;
+      width: 80%;
+      padding: 0 20px;
+      height: 525px;
+      overflow: scroll;
+      color: black;
+    }
+
+
+    .left {
+      overflow: hidden;
+    }
+
+    .menu span {
+      background-color: yellow;
+    }
+
+    .menu {
+      overflow: auto;
+      height: 530px;
+      width: 20%;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: relative;
+      background-color: #f1f1f1;
+      min-width: 100px;
+      overflow: scroll;
+      overflow-x: hidden;
+      z-index: 1;
+      margin-left: 25px;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 2px 5px;
+      text-decoration: none;
+      display: block;
+      font-size: 12px;
+    }
+
+    .show {
+      display: block;
+    }
+
+    button:hover,
+    button:focus {
+      outline: none;
+    }
+
+    @media only screen and (max-width: 620px) {
+
+      /* For mobile phones: */
+      .menu,
+      #main,
+      .right {
+        width: 100%;
+        margin-left: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body style="font-family:Verdana;color:#aaaaaa;">
+
+  <div style="background-color:#e5e5e5;padding:4px;text-align:center;">
+    <h1>HH Bhakti Charu Swami Guru Maharaj</h1>
+  </div>
+  <div>
+    <div id="left">
+
+      <div class="menu">
+
+
+        <a onclick="dedication()"><i class="fa fa-plus-circle"></i>
+          Dedication</a>
+        <a onclick="introduction()"><i class="fa fa-plus-circle"></i> Introduction</a>
+
+        <a onclick="poem()"><i class="fa fa-plus-circle"></i> My Lord and Master Poem</a>
+        <a onclick="audio()"><i class="fa fa-plus-circle"></i> Audio collection</a>
+        <a onclick="seminar()"><i class="fa fa-plus-circle"></i> Seminars</a>
+        <div id="smn" class="dropdown-content">
+          <a onclick="AOD()"><i class="fa fa-plus-circle"></i> Art Of Dying</a>
+          <div id="aod" class="dropdown-content">
+            <a onclick="aod1()"><i class="fa fa-plus-circle"></i> Part-1</a>
+            <a onclick="aod2()"><i class="fa fa-plus-circle"></i> Part-2</a>
+            <a onclick="aod3()"><i class="fa fa-plus-circle"></i> Part-3</a>
+
+          </div>
+          <a onclick="brahm()"><i class="fa fa-plus-circle"></i> Brahmacarya</a>
+          <div id="brahm" class="dropdown-content">
+            <a onclick="brahm1()"><i class="fa fa-plus-circle"></i> Part-1</a>
+            <a onclick="brahm2()"><i class="fa fa-plus-circle"></i> Part-2</a>
+            <a onclick="brahm3()""><i class=" fa fa-plus-circle"></i> Part-3</a>
+
+          </div>
+          <a onclick="bg()"><i class="fa fa-plus-circle"></i> Bhagwad Gita</a>
+          <div id="bg" class="dropdown-content">
+            <a onclick="bg1()"><i class="fa fa-plus-circle"></i> Part-1</a>
+            <a onclick="bg2()"><i class="fa fa-plus-circle"></i> Part-2</a>
+            <a onclick="bg3()"><i class="fa fa-plus-circle"></i> Part-4</a>
+            <a onclick="bg4()"><i class="fa fa-plus-circle"></i> Part-6</a>
+          </div>
+          <a onclick="vh()"><i class="fa fa-plus-circle"></i> Vaishnava Heritage</a>
+          <div id="vh" class="dropdown-content">
+            <a onclick="vh1()"><i class="fa fa-plus-circle"></i> Part-1</a>
+            <a onclick="vh2()"><i class="fa fa-plus-circle"></i> Part-2</a>
+            <a onclick="vh3()"><i class="fa fa-plus-circle"></i> Part-3</a>
+            <a onclick="vh4()"><i class="fa fa-plus-circle"></i> Part-4</a>
+            <a onclick="vh5()"><i class="fa fa-plus-circle"></i> Part-5</a>
+            <a onclick="vh6()"><i class="fa fa-plus-circle"></i> Part-6</a>
+            <a onclick="vh7()"><i class="fa fa-plus-circle"></i> Part-7</a>
+            <a onclick="vh8()"><i class="fa fa-plus-circle"></i> Part-8</a>
+            <a onclick="vh9()"><i class="fa fa-plus-circle"></i> Part-9</a>
+
+          </div>
+          <a onclick="mk()"><i class="fa fa-plus-circle"></i> Madhurya Kadambini</a>
+          <div id="mk" class="dropdown-content">
+            <a onclick="mk1()"><i class="fa fa-plus-circle"></i> Part-1</a>
+            <a onclick="mk2()"><i class="fa fa-plus-circle"></i> Part-2</a>
+            <a onclick="mk3()"><i class="fa fa-plus-circle"></i> Part-3</a>
+            <a onclick="mk4()"><i class="fa fa-plus-circle"></i> Part-4</a>
+            <a onclick="mk5()"><i class="fa fa-plus-circle"></i> Part-5</a>
+            <a onclick="mk6()"><i class="fa fa-plus-circle"></i> Part-6</a>
+          </div>
+          <a onlick="kp()"><i class="fa fa-plus-circle"></i> Lord Krishna's Pastimes</a>
+          <a onlick="tlc()"><i class="fa fa-plus-circle"></i> Teachings of Lord Chaitanya</a>
+          <a onlick="ve()"><i class="fa fa-plus-circle"></i> Vaishnava Etiquette</a>
+          <a onlick="ks()"><i class="fa fa-plus-circle"></i> Kishna Samhita</a>
+          <a onlick="ss()"><i class="fa fa-plus-circle"></i> Sharnagati Seminar , Ujjain</a>
+          <a onlick="ug()"><i class="fa fa-plus-circle"></i> Uddhava Gita</a>
+          <a onlick="rln()"><i class="fa fa-plus-circle"></i> Relationships</a>
+        </div>
+        <a onclick="bgclass()"><i class="fa fa-plus-circle"></i> Bhagwad Gita Classes</a>
+        <div id="bgc" class="dropdown-content">
+          <a onclick="bgc1()"><i class="fa fa-plus-circle"></i> BG 3.33</a>
+          <a onclick="bgc2()"><i class="fa fa-plus-circle"></i> BG 2.19</a>
+          <a onclick="bgc3()"><i class="fa fa-plus-circle"></i> BG 2.7</a>
+          <a onclick="bgc4()"><i class="fa fa-plus-circle"></i> First Canto</a>
+          <a onclick="bgc5()"c5()"><i class="fa fa-plus-circle"></i> BG Chapter 1-6</a>
+        </div>
+        <a onclick="sbclass()"><i class="fa fa-plus-circle"></i> Srimad Bhagwatam</a>
+        <div id="sbc" class="dropdown-content">
+          <a onclick="sb1()"><i class="fa fa-plus-circle"></i> First Canto</a>
+          <div id="sbc1" class="dropdown-content">
+            <a onclick="sb11()"><i class="fa fa-plus-circle"></i> SB 01.09.34</a>
+            <a onclick="sb12()"><i class="fa fa-plus-circle"></i> SB 01.15.34</a>
+            <a onclick="sb13()"><i class="fa fa-plus-circle"></i> SB 01.02</a>
+            <a onclick="sb14()"><i class="fa fa-plus-circle"></i> SB 01.07 </a>
+            <a onclick="sb15()"><i class="fa fa-plus-circle"></i> SB 01.04</a>
+            <a onclick="sb17()"><i class="fa fa-plus-circle"></i> SB 1.5.29/a>
+            <a onclick="sb18()"><i class="fa fa-plus-circle"></i> SB 1.2</a>
+            <a onclick="sb19()"><i class="fa fa-plus-circle"></i> SB 1.1.15</a>
+            <a onclick="sb20()"><i class="fa fa-plus-circle"></i> SB 1.15.34</a>
+          </div>
+          <a onclick="sb2()"><i class="fa fa-plus-circle"></i> Second Canto</a>
+          <a onclick="sb3()"><i class="fa fa-plus-circle"></i> Third Canto</a>
+          <a onclick="sb4()"><i class="fa fa-plus-circle"></i> Fourth Canto</a>
+          <a onclick="sb5()"><i class="fa fa-plus-circle"></i> Fifth Canto</a>
+          <a onclick="sb7()"><i class="fa fa-plus-circle"></i> Seventh Canto</a>
+          <a onclick="sb8()"><i class="fa fa-plus-circle"></i> Eighth Canto</a>
+          <a onclick="sb10()"><i class="fa fa-plus-circle"></i> Tenth Canto</a>
+          <a onclick="sb11()"><i class="fa fa-plus-circle"></i> Eleventh Canto</a>
+        </div>
+        <a onclick="cc()"><i class="fa fa-plus-circle"></i> Chaitanya Chartamrita</a>
+        <div id="cc" class="dropdown-content">
+          <a onclick="cc1()"><i class="fa fa-plus-circle"></i> The padyatra of Mahaprabhu</a>
+          <a onclick="cc2()"><i class="fa fa-plus-circle"></i> Adi Lila 1.4</a>
+        </div>
+        <a onclick="spp()"><i class="fa fa-plus-circle"></i> Srila Prabhupada Pastimes</a>
+        <div id="spp" class="dropdown-content">
+          <a onclick="spp1()"><i class="fa fa-plus-circle"></i>Experience with Prabhupada</a>
+          <a onclick="spp2()"><i class="fa fa-plus-circle"></i> Srila Prabhupada Katha</a>
+          <a onclick="spp2()"><i class="fa fa-plus-circle"></i> Srila Prabhupada Realization</a>
+          <a onclick="spp2()"><i class="fa fa-plus-circle"></i> Srila Prabhupada Reflection</a>
+          <a onclick="spp2()"><i class="fa fa-plus-circle"></i> Glorious Position of Prabhupada </a>
+        </div>
+        <a onclick="va()"><i class="fa fa-plus-circle"></i> Vaishnava acaryas</a>
+        <div id="va" class="dropdown-content">
+          <a onclick="va1()"><i class="fa fa-plus-circle"></i> Appearence day of Bhakti Tirtha Swami</a>
+          <a onclick="va2()"><i class="fa fa-plus-circle"></i> Tamal Krishna Goswami Maharaja</a>
+          <a onclick="va3()"><i class="fa fa-plus-circle"></i> HH Jayapataka maharaj recovery</a>
+          <a onclick="va4()"><i class="fa fa-plus-circle"></i> Glorification of bhakti tirth maharaj</a>
+          <a onclick="va5()"><i class="fa fa-plus-circle"></i> Disappearence day of Tamal krishna maharaj</a>
+          <a onclick="va6()"><i class="fa fa-plus-circle"></i> VyasPuja Offering - Gopal Krishna Maharaja</a>
+          <a onclick="va7()"><i class="fa fa-plus-circle"></i> Vyaspuja Offering - Jayapataka maharaj</a>
+          <a onclick="va8()"><i class="fa fa-plus-circle"></i> Glorification of HG Shyamlal Prabhu</a>
+
+        </div>
+        <a onclick="vs()"><i class="fa fa-plus-circle"></i> Vaishnava Sadachar</a>
+        <a onclick="vpl()"><i class="fa fa-plus-circle"></i> Various Preaching Lectures</a>
+        <div id="vpl" class="dropdown-content">
+          <a onclick="vpl1()"><i class="fa fa-plus-circle"></i> A beautiful project</a>
+          <a onclick="vpl2()"><i class="fa fa-plus-circle"></i> Cultural Program Speech</a>
+          <a onclick="vpl3()"><i class="fa fa-plus-circle"></i> New Dwarka dham</a>
+          <a onclick="vpl4()"><i class="fa fa-plus-circle"></i> One cannot push a leader</a>
+          <a onclick="vpl5()"><i class="fa fa-plus-circle"></i> Business for krishna</a>
+          <a onclick="vpl6()"><i class="fa fa-plus-circle"></i> How Vrnashrama can be established today</a>
+          <a onclick="vpl7()"><i class="fa fa-plus-circle"></i> Iskcon is a family</a>
+          <a onclick="vpl8()"><i class="fa fa-plus-circle"></i> Relationship with guru</a>
+          <a onclick="vpl9()"><i class="fa fa-plus-circle"></i> Role of woman in kc</a>
+          <a onclick="vpl10()"><i class="fa fa-plus-circle"></i> How will KC preach in every town & village</a>
+          <a onclick="vpl11()"><i class="fa fa-plus-circle"></i> South Africa</a>
+          <a onclick="vpl12()"><i class="fa fa-plus-circle"></i> Bhajhu re mana</a>
+
+        </div>
+        <a onclick="ac()"><i class="fa fa-plus-circle"></i> Abhay Charan</a>
+        <a onclick="oom"><i class="fa fa-plus-circle"></i> Ocean Of Mercy</a>
+        <a onclick="vo()"><i class="fa fa-plus-circle"></i> Vyaspuja Offering</a>
+        <div id="vo" class="dropdown-content">
+          <a onclick="vo1()"><i class="fa fa-plus-circle"></i> 1981</a>
+          <a onclick="vo2()"><i class="fa fa-plus-circle"></i> 1987</a>
+          <a onclick="vo3()"><i class="fa fa-plus-circle"></i> 1988</a>
+          <a onclick="vo4()"><i class="fa fa-plus-circle"></i> 1989</a>
+          <a onclick="vo5()"><i class="fa fa-plus-circle"></i> 1991</a>
+          <a onclick="vo6()"><i class="fa fa-plus-circle"></i> 1993</a>
+          <a onclick="vo7()"><i class="fa fa-plus-circle"></i> 1992</a>
+          <a onclick="vo8()"><i class="fa fa-plus-circle"></i> 1994</a>
+          <a onclick="vo9()"><i class="fa fa-plus-circle"></i> 1995 </a>
+          <a onclick="vo10()"><i class="fa fa-plus-circle"></i> 1996</a>
+          <a onclick="vo11()"><i class="fa fa-plus-circle"></i> 1997</a>
+          <a onclick="vo12()"><i class="fa fa-plus-circle"></i> 1998</a>
+          <a onclick="vo13()"><i class="fa fa-plus-circle"></i> 1999</a>
+          <a onclick="vo14()"><i class="fa fa-plus-circle"></i> 2000</a>
+          <a onclick="vo15()"><i class="fa fa-plus-circle"></i> 2001</a>
+          <a onclick="vo16()"><i class="fa fa-plus-circle"></i> 2002</a>
+          <a onclick="vo17()"><i class="fa fa-plus-circle"></i> 2003</a>
+          <a onclick="vo18()"><i class="fa fa-plus-circle"></i> 2004</a>
+          <a onclick="vo19()"><i class="fa fa-plus-circle"></i> 2005</a>
+          <a onclick="vo20()"><i class="fa fa-plus-circle"></i> 2006</a>
+          <a onclick="vo21()"><i class="fa fa-plus-circle"></i> 2007</a>
+          <a onclick="vo22()"><i class="fa fa-plus-circle"></i> 2008</a>
+          <a onclick="vo23()"><i class="fa fa-plus-circle"></i> 2009</a>
+          <a onclick="vo24()"><i class="fa fa-plus-circle"></i> 2010</a>
+          <a onclick="vo25()"><i class="fa fa-plus-circle"></i> 2011</a>
+          <a onclick="vo26()"><i class="fa fa-plus-circle"></i> 2012</a>
+          <a onclick="v027()"><i class="fa fa-plus-circle"></i> 2013</a>
+        </div>
+        <a onclick="fc()"><i class="fa fa-plus-circle"></i> festival Classes</a>
+        <div id="fc" class="dropdown-content">
+          <a onclick="vo1()"><i class="fa fa-plus-circle"></i> Gaur Purnima 2003</a>
+          <a onclick="vo2()"><i class="fa fa-plus-circle"></i> Balaram jayanti</a>
+          <a onclick="vo3()"><i class="fa fa-plus-circle"></i> Radhashtami</a>
+          <a onclick="vo4()"><i class="fa fa-plus-circle"></i> Srila Bhakti Siddhanta Sararswati Thakur</a>
+          <a onclick="vo5()"><i class="fa fa-plus-circle"></i> HH Tamal Krishna Goswami maharaj</a>
+          <a onclick="vo6()"><i class="fa fa-plus-circle"></i> Srila Bhakti siddhanta Sararswati Thakur</a>
+          <a onclick="vo7()"><i class="fa fa-plus-circle"></i> Gaur Purnima 2010</a>
+          <a onclick="vo8()"><i class="fa fa-plus-circle"></i> Narsimha chaturdashi</a>
+          <a onclick="vo9()"><i class="fa fa-plus-circle"></i> Advait Acarya appearence day</a>
+          <a onclick="vo10()"><i class="fa fa-plus-circle"></i> Rathyatra Ranburg</a>
+          <a onclick="vo11()"><i class="fa fa-plus-circle"></i> Janmashtami Lectures</a>
+          <a onclick="vo12()"><i class="fa fa-plus-circle"></i> SnanYatra</a>
+          <a onclick="vo13()"><i class="fa fa-plus-circle"></i> Initiation Lecture</a>
+          <a onclick="vo14()"><i class="fa fa-plus-circle"></i> Durban Rathyatra</a>
+
+        </div>
+        <a onclick="sc()"><i class="fa fa-plus-circle"></i> selected Classes</a>
+        <a onclick="mf()"><i class="fa fa-plus-circle"></i> Memorial Festival</a>
+
+      </div>
+
+    </div>
+    <div id="main">
+      <h2 style="text-align: center;">Hare Krishna</h2>
+      <p style="text-align: center;">Welcome to HH BHakti Charu Swami.com</p
+    </div>
+  </div>
+
+
+
+
+
+
+  <!-- <div style="background-color:#e5e5e5;text-align:center;padding:10px;margin-top:7px;">© copyright w3schools.com</div> -->
+
+</body>
+
+</html>
